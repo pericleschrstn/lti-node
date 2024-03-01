@@ -6,7 +6,7 @@ const lti = require("ltijs").Provider;
 
 // Setup
 lti.setup(
-  process.env.LTI_KEY,
+  "E3PuHVJ0mFQLS86IdzRmHDkTfw3xYa46Pxq0hIoLFXCtLc7BoalD7KHysrCz9pij",
   {
     url: process.env.DB_CONNECTION_STRING,
     // connection: { user: process.env.DB_USER, pass: process.env.DB_PASS },
