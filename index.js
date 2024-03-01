@@ -44,7 +44,7 @@ const setup = async () => {
     clientId: "247230000000000103",
     authenticationEndpoint: "https://sso.test.canvaslms.com/api/lti/authorize_redirect",
     accesstokenEndpoint: "https://sso.test.canvaslms.com/login/oauth2/token",
-    authConfig: { method: "JWK_KEY", key: "https://sso.test.canvaslms.com/api/lti/security/jwks" },
+    authConfig: { method: "JWK_SET", key: "https://sso.test.canvaslms.com/api/lti/security/jwks" },
   });
 };
 
