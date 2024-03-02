@@ -6,7 +6,7 @@ const lti = require("ltijs").Provider;
 
 // Setup
 lti.setup(
-  "E3PuHVJ0mFQLS86IdzRmHDkTfw3xYa46Pxq0hIoLFXCtLc7BoalD7KHysrCz9pij",
+  process.env.LTI_KEY,
   {
     url: process.env.DB_CONNECTION_STRING,
     // connection: { user: process.env.DB_USER, pass: process.env.DB_PASS },
@@ -23,11 +23,11 @@ lti.setup(
 
 // When receiving successful LTI launch redirects to app
 lti.onConnect(async (token, req, res) => {
-  const url = "https://lti-psi.vercel.app/";
+  // const url = "https://lti-psi.vercel.app/";
 
-  res.writeHead(302, { Location: url });
-  res.end();
-  // return res.sendFile(path.join(__dirname, "./public/index.html"));
+  // res.writeHead(302, { Location: url });
+  // res.end();
+  return res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
 // When receiving deep linking request redirects to deep screen

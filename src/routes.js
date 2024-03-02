@@ -121,11 +121,11 @@ router.get("/info", async (req, res) => {
 
 // Wildcard route to deal with redirecting to React routes
 router.get("*", (req, res) => {
-  const url = "https://lti-psi.vercel.app/";
+  // const url = "https://lti-psi.vercel.app/";
 
-  res.writeHead(302, { Location: url });
-  res.end();
-  // res.sendFile(path.join(__dirname, "../public/index.html"));
+  // res.writeHead(302, { Location: url });
+  // res.end();
+  res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
 module.exports = router;
