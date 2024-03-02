@@ -23,7 +23,11 @@ lti.setup(
 
 // When receiving successful LTI launch redirects to app
 lti.onConnect(async (token, req, res) => {
-  return res.sendFile(path.join(__dirname, "./public/index.html"));
+  const url = "https://lti-psi.vercel.app/";
+
+  res.writeHead(302, { Location: url });
+  res.end();
+  // return res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
 // When receiving deep linking request redirects to deep screen
