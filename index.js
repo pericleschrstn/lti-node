@@ -23,7 +23,7 @@ lti.setup(
 
 // When receiving successful LTI launch redirects to app
 lti.onConnect(async (token, req, res) => {
-  return res.sendFile(path.join(__dirname, "./public/index.html"));
+  return res.sendFile(path.join(__dirname, "./public/server/app/index.html"));
 });
 
 // When receiving deep linking request redirects to deep screen
