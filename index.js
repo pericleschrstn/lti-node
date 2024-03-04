@@ -17,6 +17,7 @@ lti.setup(
       secure: true, // Set secure to true if the testing platform is in a different domain and https is being used
       sameSite: "None", // Set sameSite to 'None' if the testing platform is in a different domain and https is being used
     },
+    ltiaas: Mode,
     devMode: false, // Set DevMode to true if the testing platform is in a different domain and https is not being used
   }
 );
@@ -27,7 +28,8 @@ lti.onConnect(async (token, req, res) => {
 
   // res.writeHead(302, { Location: url });
   // res.end();
-  return res.sendFile(path.join(__dirname, "./public/index.html"));
+  // return res.sendFile(path.join(__dirname, "./public/index.html"));
+  return lti.redirect(res, "https://lti-psi.vercel.app");
 });
 
 // When receiving deep linking request redirects to deep screen
