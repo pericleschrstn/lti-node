@@ -29,7 +29,7 @@ lti.onConnect(async (token, req, res) => {
   // res.writeHead(302, { Location: url });
   // res.end();
   // return res.sendFile(path.join(__dirname, "./public/index.html"));
-  return lti.redirect(res, "https://lti-psi.vercel.app");
+  return lti.redirect(res, "https://sites.pixelstorm.com.br/sesi");
 });
 
 // When receiving deep linking request redirects to deep screen
