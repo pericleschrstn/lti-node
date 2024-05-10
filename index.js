@@ -29,7 +29,7 @@ lti.onConnect(async (token, req, res) => {
   // res.writeHead(302, { Location: url });
   // res.end();
   // return res.sendFile(path.join(__dirname, "./public/index.html"));
-  return lti.redirect(res, "https://quiz-nextjs-app.jdidqp.easypanel.host");
+  return lti.redirect(res, "https://game-virtudes.azurewebsites.net");
 });
 
 // When receiving deep linking request redirects to deep screen
@@ -45,12 +45,12 @@ const setup = async () => {
   await lti.deploy({ port: process.env.PORT });
 
   await lti.registerPlatform({
-    url: "https://canvas.instructure.com",
+    url: "https://canvas.test.instructure.com",
     name: "Canvas",
     clientId: "247230000000000103",
-    authenticationEndpoint: "https://sso.canvaslms.com/api/lti/authorize_redirect",
-    accesstokenEndpoint: "https://sso.canvaslms.com/login/oauth2/token",
-    authConfig: { method: "JWK_SET", key: "https://sso.canvaslms.com/api/lti/security/jwks" },
+    authenticationEndpoint: "https://sso.test.canvaslms.com/api/lti/authorize_redirect",
+    accesstokenEndpoint: "https://sso.test.canvaslms.com/login/oauth2/token",
+    authConfig: { method: "JWK_SET", key: "https://sso.test.canvaslms.com/api/lti/security/jwks" },
   });
 };
 
