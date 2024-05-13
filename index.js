@@ -17,7 +17,7 @@ lti.setup(
       secure: true, // Set secure to true if the testing platform is in a different domain and https is being used
       sameSite: "None", // Set sameSite to 'None' if the testing platform is in a different domain and https is being used
     },
-    ltiaas: true,
+    // ltiaas: true,
     devMode: false, // Set DevMode to true if the testing platform is in a different domain and https is not being used
   }
 );
